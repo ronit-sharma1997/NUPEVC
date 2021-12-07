@@ -114,7 +114,7 @@
     
         <div class="cd-schedule-modal__body">
           <div class="cd-schedule-modal__event-info"><div>{{currentEvent?.description}}</div></div>
-          <div class="cd-schedule-modal__body-bg" [ngStyle]="{'transform': modalClicked === true ? 'scaleY(4.752475247524752) scaleX(523)' : 'none' }" [style.width.px]="modalClicked ? 1 : null" [style.height.px]="modalClicked ? 101 : null"></div>
+          <div class="cd-schedule-modal__body-bg" [style.width]="modalClicked ? '100%' : 'null'" [style.height]="modalClicked ? '100%' : 'null'"></div>
         </div>
     
         <a (click)="buttonClicked()" class="cd-schedule-modal__close text-replace">Close</a>

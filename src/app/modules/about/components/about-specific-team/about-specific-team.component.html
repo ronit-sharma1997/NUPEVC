@@ -9,7 +9,7 @@
               <div class="col-12">
                 <div style="height: 3px; width: 30%; background-color: #600000;"></div>
               </div>
-              <div class="col-11 mt-3 team-description">PEVC holds several events each semester in hopes of engaging students with exceptional professionals in the space through initiatives such as: fireside chats, panels, case studies, and a 'Shark Tank' event where 2 Northeastern ventures pitch to real investors.</div>
+              <div class="col-11 mt-3 team-description">{{description}}<span *ngIf="teamDetails.linkDescription" [routerLink]="['/events']" style="text-decoration: underline; cursor: pointer;">{{teamDetails.linkDescription}}</span><span *ngIf="teamDetails.description3">{{teamDetails.description3}}</span></div>
             </div>
           </div>
     </div>

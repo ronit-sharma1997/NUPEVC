@@ -1,1 +1,152 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+body {
+    font-family: "Merriweather", serif !important;
+}
+
+.background-image { 
+    min-height: 100vh; 
+    background-attachment: fixed;
+}
+
+.background-size {
+    background-size: 100% 100%;
+}
+
+.primary-red-color {
+    color: #841010;
+}
+
+.primary-blue-color {
+    color: #1b2e54;
+}
+
+.col-30 {
+    flex: 0 0 auto;
+    width: 30% !important;
+}
+
+.col-30:first-child {
+    padding-left: 5vw;
+}
+
+
+.col-40 {
+    flex: 0 0 auto;
+    width: 40% !important;
+}
+
+.header-font-size {
+    font-size: 4.4vw;
+    line-height: 1;
+}
+
+.subheader-font-size {
+    font-size: 2vw;
+    line-height: 1;
+}
+
+.line-through {
+    display: flex;
+    flex-direction: row;
+}
+
+.line-through::after,
+.line-through::before {
+    content: "";
+    flex: 1 1;
+    border-bottom: 0.25px solid;
+    margin: auto;
+}
+
+.line-through::before {
+    margin-right: 2vw;
+}
+
+.line-through::after {
+    margin-left: 2vw;
+}
+
+.about-background-image {
+    background-image: url('./assets/about_background 2.png');
+    background-repeat: no-repeat; 
+    background-size: cover
+}
+
+.about-background-size {
+  height:87vh;
+}
+
+.title {
+    font-size: 9vw;
+}
+
+.title-position {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row-padding {
+    padding: 3rem;
+}
+
+
+@media (max-width: 950px) {
+    .col-30 {
+        flex: 0 0 auto;
+        width: 40% !important;
+        text-align: left !important;
+    }
+
+    .col-30:last-child {
+        width: 100% !important;
+    }
+
+    .col-40 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+
+    .pl {
+        padding-left: 0 !important;
+    }
+}
+
+@media (max-width: 647px) {
+    .col-30 {
+        flex: 0 0 auto;
+        width: 100% !important;
+        padding-left: 3vw !important;
+        text-align: center !important;
+    }
+
+    .col-40 {
+        flex: 0 0 auto;
+        width: 100% !important;
+        padding-left: 3vw !important;
+        text-align: center !important;
+    }
+
+    .pl {
+        padding-left: 0.75rem !important;
+    }
+
+    .header-font-size {
+        font-size: 7vw;
+        line-height: 1;
+    }
+
+    .subheader-font-size {
+        font-size: 5vw;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .row-padding {
+        padding: 1rem;
+    }
+}

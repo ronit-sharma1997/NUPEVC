@@ -1,0 +1,42 @@
+<nav class="custom-navbar" style="z-index: 2" [ngStyle]="{'box-shadow': this.currentPage == '/about/events' || this.currentPage == '/about/education' ? 'rgb(0 0 0 / 20%) 0px 2px 10px' : 'none'}">
+    <a ><img class="img-height" src="../../assets/WHITE MASK NEW PEVC Logo.png" [ngStyle]="{'filter': this.currentPage == '/home' || this.currentPage == '' ? 'brightness(100%)' : 'brightness(0%)'}"/></a>
+      <div class="d-flex navbar-content-width navbar-content"
+           [ngStyle]="{'max-height': displaySideNavBar ? '600px' : '0px', 'padding': displaySideNavBar ? '100px 40px' : '0px'}" style="z-index: 1;">
+        <fa-icon class="close-button navbar-link-color" [icon]="faTimes" size="2x" (click)="this.displaySideNavBar = !this.displaySideNavBar"></fa-icon>
+          <!-- Home navbar tab. -->
+          <div class="navbar-link"><a class="navbar-link-spacing navbar-link-color" routerLink="/">Home</a></div>
+          <!-- About navbar tab. -->
+            <div class="navbar-link" (click)="this.displayAbout = !this.displayAbout;"><a class="navbar-link-spacing navbar-link-color">About 
+              <fa-icon
+            style="opacity: 0.5;"
+            [icon]="faChevronDown"
+            size="1x"
+            transform="rotate-{{displayAbout ? 180 : 0}}"
+          ></fa-icon>
+        </a>
+            <div class="dropdown dropdown-layout" [ngStyle]="{'max-height': displayAbout ? '250px' : '0px'}">
+              <a class="dropdown-link dropdown-link-color" routerLink="/about">Mission</a>  
+            <a class="dropdown-link dropdown-link-color" routerLink="/about/e-board">E-Board</a>
+            <a class="dropdown-link dropdown-link-color" routerLink="/about/alumni">Alumni</a>
+            <a class="dropdown-link dropdown-link-color" routerLink="/about/advisor">Advisor</a>
+          </div>
+        
+        </div>
+    
+          <!-- Events navbar tab. -->
+          <div class="navbar-link" routerLink="/events"><a class="navbar-link-spacing navbar-link-color" >Events</a></div>
+    
+          <!-- Get Involved navbar tab. -->
+            <div class="navbar-link" routerLink="/newsletter"><a class="navbar-link-spacing navbar-link-color">Newsletter 
+        </a>
+        </div>
+    
+          <!-- Contact Us navbar tab. -->
+          <div class="navbar-link"routerLink="/contact-us"><a class="navbar-link-spacing navbar-link-color">Contact Us</a></div>
+    
+          <div class="apply-navbar-link"><a class="navbar-link-spacing navbar-link-color apply-button-color px-3" routerLink="/apply" style="border:2px solid;border-radius: 25px;">Apply</a></div>
+      </div>
+      <div class="hamburger-button">
+        <fa-icon [icon]="faBars" size="2x" (click)="displaySideNavBar = !displaySideNavBar"></fa-icon>
+      </div>
+    </nav>

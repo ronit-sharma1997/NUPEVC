@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+    <div class="alumni-card">
+        <div class="row w-100 card-padding">
+            <div class="img-col d-flex align-items-center" style="padding-right: 0 !important;">
+                <div class="picture-container mx-auto">
+                    <img class="picture-wrap" [src]="advisor.img"/>
+                </div>
+            </div>
+            <div class="text-col">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="name">{{advisor.name}}</span>
+                        <fa-icon class="ms-2 primary-blue-color" (click)="navigateToUrl(advisor.linkedIn)" [icon]="faLinkedin" size="2x"></fa-icon>
+                    </div>
+                    <div class="col-12" style="border-bottom: 1px solid gray;">
+                        <span class="title" style="margin-left: 0;">{{advisor.title}}</span>
+                    </div>
+                    <div class="col-12 mt-3 description-text">
+                        {{advisor.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

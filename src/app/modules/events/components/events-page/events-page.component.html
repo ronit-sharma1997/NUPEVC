@@ -1,0 +1,125 @@
+<div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position">Events</span>
+  </div>
+  <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+      <div class="cd-schedule__timeline">
+        <ul #myIdentifier style="height: 100%">
+          <li><span>2:00 PM</span></li>
+          <li><span>2:30 PM</span></li>
+          <li><span>3:00 PM</span></li>
+          <li><span>3:30 PM</span></li>
+          <li><span>4:00 PM</span></li>
+          <li><span>4:30 PM</span></li>
+          <li><span>5:00 PM</span></li>
+          <li><span>5:30 PM</span></li>
+          <li><span>6:00 PM</span></li>
+          <li><span>6:30 PM</span></li>
+          <li><span>7:00 PM</span></li>
+          <li><span>7:30 PM</span></li>
+          <li><span>8:00 PM</span></li>
+          <li><span>8:30 PM</span></li>
+          <li><span>9:00 PM</span></li>
+          <li><span>9:30 PM</span></li>
+        </ul>
+      </div>
+  
+      <div class="cd-schedule__events">
+          <ul style="padding-right: 2rem;">
+            <li [ngClass]="eventDayMap.get(0)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Sunday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(0); index as i" [ngClass]="event.htmlClass" [style.top.px]="event.top" [style.height.px]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="eventDayMap.get(1)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Monday</span></div>
+      
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(1); index as i" [ngClass]="event.htmlClass" [style.top]="event.top" [style.height]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+  
+            <li [ngClass]="eventDayMap.get(2)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(2); index as i" [ngClass]="event.htmlClass" [style.top]="event.top" [style.height]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="eventDayMap.get(3)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(3); index as i" [ngClass]="event.htmlClass" [style.top]="event.top" [style.height]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+      
+            <li [ngClass]="eventDayMap.get(4)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Thursday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(4); index as i" [ngClass]="event.htmlClass" [style.top]="event.top" [style.height]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+      
+            <li [ngClass]="eventDayMap.get(5)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Friday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(5); index as i" [ngClass]="event.htmlClass" [style.top.px]="event.top" [style.height.px]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="eventDayMap.get(6)!.length > 0 ? 'cd-schedule__group' : 'cd-schedule__group-no-events'">
+              <div class="cd-schedule__top-info"><span>Saturday</span></div>
+              <ul>
+                <li *ngFor="let event of eventDayMap.get(6); index as i" [ngClass]="event.htmlClass" [style.top.px]="event.top" [style.height.px]="event.height" [style.background]="event.color" (click)="eventClicked(event)">
+                  <a [attr.data-start]="event.startTime" [attr.data-end]="event.endTime">
+                    <em class="cd-schedule__name">{{event.title}}</em>
+                  </a>
+                </li>
+              </ul>
+            </li>
+      </ul>
+      </div>
+      
+      <div [ngClass]="modalClass">
+        <header class="cd-schedule-modal__header">
+          <div class="cd-schedule-modal__content">
+            <span class="cd-schedule-modal__date">{{currentEvent?.startTime}} - {{currentEvent?.endTime}}</span>
+            <h3 class="cd-schedule-modal__name">{{currentEvent?.title}}</h3>
+          </div>
+    
+          <div class="cd-schedule-modal__header-bg" [ngStyle]="{'transform': modalClicked ? 'scaleY(4.752475247524752)' : 'scaleY(1)' }" [style.background]="currentEvent?.color"></div>
+        </header>
+    
+        <div class="cd-schedule-modal__body">
+          <div class="cd-schedule-modal__event-info"><div>{{currentEvent?.description}}</div></div>
+          <div class="cd-schedule-modal__body-bg" [ngStyle]="{'transform': modalClicked === true ? 'scaleY(4.752475247524752) scaleX(523)' : 'none' }" [style.width.px]="modalClicked ? 1 : null" [style.height.px]="modalClicked ? 101 : null"></div>
+        </div>
+    
+        <a (click)="buttonClicked()" class="cd-schedule-modal__close text-replace">Close</a>
+      </div>
+    
+      <div class="cd-schedule__cover-layer"></div>
+  </div>
+  <app-footer></app-footer>

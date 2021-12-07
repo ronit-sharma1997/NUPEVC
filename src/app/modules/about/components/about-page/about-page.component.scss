@@ -1,0 +1,206 @@
+.text{
+    position: relative;
+    text-align: left;
+    clear: right;
+}
+
+.text::after {
+    content: "";
+    position: absolute;
+    border-top: 2px solid black;
+    left: 0%;
+    bottom: 0px;
+    width: 38%;
+    height: 0px;
+}
+
+.cardheader {
+    font-family: "Merriweather", serif;
+    font-size: 25px;
+    color: #841010;
+    font-weight: 700;
+}
+
+.description-text {
+  font-size: 25px; 
+  line-height: 1.1;
+}
+
+.our-team-height {
+  min-height: 60vh;
+  height: auto;
+}
+
+.card-box {
+      background-color: white; 
+      box-shadow: 0 2.5rem 3rem rgb(0 0 0 / 20%);
+}
+
+.card-margin {
+  margin-right: 4%; 
+}
+
+.card-margin:last-child {
+  margin-right: 0;
+}
+
+.display-shorter-description {
+  display: none;
+}
+
+.display-description {
+  display: block;
+}
+
+.description-text-align {
+  text-align: left;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+.row-padding {
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  .description-text {
+    font-size: 20px; 
+    line-height: 1.1;
+  }
+
+  .display-shorter-description {
+    display: block;
+  }
+
+  .display-description {
+    display: none;
+  }
+
+  .row-padding {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+.img-section {
+  padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.img-logo {
+  margin: 0px!important;
+    padding: 5px;
+    width: calc(100% / 5);
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+.img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.img-wrap img {
+  transition: 0.5s;
+  filter: grayscale(100%);
+}
+
+.img-wrap img:hover {
+  -webkit-transform: translate(0,-10px);
+  transform: translate(0,-10px);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+@media (max-width: 480px) {
+  .img-logo {
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .img-logo {
+    width: calc(100% /2);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .img-logo {
+    width: calc(100% /3);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .img-logo {
+    width: calc(100% /4);
+  }
+}
+
+@media (max-width: 979px) {
+  .our-team-height {
+    height: auto;
+    justify-content: center;
+  }
+
+  .description-text-align {
+    text-align: center;
+  }
+
+  .card-margin {
+    margin-top: 2rem;
+    margin-right: 0;
+  }
+
+  .card-margin:first-child {
+    margin-top: 0;
+  }
+
+  .card-col {
+    flex: 0 0 auto;
+    max-width: 83.33333333%;
+  }
+}
+
+
+
+@media (min-width: 980px) {
+    .card-col {
+      flex: 0 0 22%;
+      max-width: 22%;
+    }
+  
+    .team-height {
+      height: 500px;
+    }
+
+    .img-col {
+      flex: 0 0 auto;
+      width: 41.66666667%;
+    }
+
+    .description-col {
+      flex: 0 0 auto;
+      width: 58.33333333%;
+    }
+}

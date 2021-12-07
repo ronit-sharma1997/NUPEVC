@@ -1,0 +1,94 @@
+.newsletter-container {
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+}
+
+.newsletter-card {
+    height: 80px;
+    width: 100%;
+    background-color: #841010;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+
+.newsletter-card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+// .newsletter-card:hover ~ .newsletter-card {
+//   position: relative;
+//   left: 50px;
+//   transition: 0.4s ease-out;
+// }
+
+.card-title {
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-date {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.form-select {
+    background-color: #c4c4c4;
+}
+
+.form-select:focus {
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 700px) {
+    .dropdown-col {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .card-title {
+        color: white;
+        font-weight: 700;
+        position: absolute;
+        left: 20px;
+        top: 40%;
+        transform: translateY(-40%);
+    }
+
+    .card-date {
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+        position: absolute;
+        top: 80%;
+        transform: translateY(-80%);
+        left: 20px;
+    }
+}
+
+@media (min-width: 701px) {
+    .dropdown-col {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}

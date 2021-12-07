@@ -1,0 +1,31 @@
+.subscribe {
+    display: none;
+  }
+  
+  input {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .subscribe-title:after { /* this is the border */
+    content:"";
+    display:block;
+    width: 6em;
+    max-width:30%;
+    border-bottom: 5px solid #841010;
+    margin: auto;
+  }
+  
+  @media (max-width: 647px) {
+    .community {
+      display: none !important;
+    }
+  
+    .form-margin {
+      margin: auto;
+    } 
+  
+    .subscribe {
+      display: inline-block;
+    }
+  }

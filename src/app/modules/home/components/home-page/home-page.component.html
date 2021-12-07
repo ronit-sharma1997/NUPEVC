@@ -1,0 +1,137 @@
+<!-- <div class="position-relative container-box">
+    <img class="w-100 img-min-height" src="../../../../assets/home_background.jpeg"/>
+    <span class="position-absolute header header-font-size header-position primary-blue-color">Private Equity &<br/>Venture Capital Club<br/>
+    <span class="tw mt-2" #tw></span></span>
+</div> -->
+<div class="background-image background-size home-background-image"> <span class="position-absolute header header-font-size header-position primary-blue-color">Northeastern <br/>Private Equity &<br/>Venture Capital Club<br/>
+    <span class="tw mt-2" #tw></span></span></div>
+<div class="row justify-content-center p-5 mx-auto my-auto" style="background-color: #F0EFEF;">
+    <div class="col-11 text-center mb-3">
+        <span class="header-font-size line-through primary-blue-color">Our Mission</span>
+    </div>
+    <div class="col-3_5 shadow card-margin-right bg-white">
+        <img class="w-50 d-block mx-auto mt-4" src="../../../../../assets/education.svg">
+        <span class="text-center d-block subheader-font-size primary-red-color mt-4">Educate</span>
+        <p class="text-center mt-3 mb-3 paragraph-font-size" style="padding-left: 0.75vw; padding-right: 0.75vw;">Enrich our knowledge of the private equity & venture capital space and educate others on learnings.</p>
+    </div>
+    <div class="col-3_5 shadow card-margin-top card-margin-right bg-white">
+        <img class="w-50 d-block mx-auto mt-4" src="../../../../../assets/support.svg">
+        <span class="text-center d-block subheader-font-size primary-red-color mt-4">Collaborate</span>
+        <p class="text-center mt-3 mb-3 paragraph-font-size" style="padding-left: 0.75vw; padding-right: 0.75vw;">Connect with institutions, alumni, peers, faculty, and entrepreneurs for mentorship and collaboration.</p>
+    </div>
+    <div class="col-3_5 shadow card-margin-top bg-white">
+        <img class="w-50 d-block mx-auto mt-4" src="../../../../../assets/responsibility.svg">
+        <span class="text-center d-block subheader-font-size primary-red-color mt-4">Engage</span>
+        <p class="text-center mt-3 mb-3 paragraph-font-size" style="padding-left: 0.75vw; padding-right: 0.75vw;">Create and foster a Northeastern community of investors, entrepreneurs, and industry-leaders. </p>
+    </div>
+</div>
+
+<div class="background-image background-size home-background-image">
+    <div class="row mx-auto numbers-container-height">
+        <div class="col-5 header-font-size text-white">
+            <div class="row h-100">
+                <div class="col-12 d-flex align-items-center">
+                    <span style="margin-left: 1vw">Our Numbers</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="row justify-content-center h-100">
+                <div class="numbers-col-4_5 d-flex align-items-center justify-content-center text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <app-animated-number
+                            [digit]="7"
+                            [duration]="1000"
+                          ></app-animated-number>
+                        </div>
+                        <div class="col-12 paragraph-font-size">
+                            <p>Co-ops Sourced</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="numbers-col-4_5 d-flex align-items-center justify-content-center text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <app-animated-number
+                            [digit]="45"
+                            [duration]="1000"
+                          ></app-animated-number>
+                        </div>
+                        <div class="col-12 paragraph-font-size">
+                            <p>Team Members</p>
+                        </div>
+                    </div>
+                     
+                </div>
+                <div class="numbers-col-4_5 d-flex align-items-center justify-content-center text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <app-animated-number
+                            [digit]="50"
+                            [duration]="1000"
+                          ></app-animated-number>
+                        </div>
+                        <div class="col-12 paragraph-font-size">
+                            <p>Alumni Engaged</p>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row justify-content-center p-5 mx-auto" style="background-color: #F0EFEF;">
+        <div class="col-11 text-center mb-3">
+            <span class="header-font-size line-through primary-blue-color">Our Teams</span>
+        </div>
+        <div (click)="navigateToUrl('/about/events')" class="col-4_5 team-card-padding d-flex align-items-center justify-content-center team-card position-relative card-margin-right" style="background: no-repeat center/50% #841010 url(../../../../../assets/calendar.svg);">
+            <div class="text">
+                <div class="overlay d-flex align-items-center justify-content-center">
+                    <div class="head">
+                        <p>Events</p>
+                        <hr>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div (click)="navigateToUrl('/about/education')" class="col-4_5 team-card-padding d-flex align-items-center justify-content-center team-card position-relative card-margin-top" style="background: no-repeat center/50% #1b2e54 url(../../../../../assets/learning.svg);">
+            <!-- <img style="filter: brightness(0) invert(1); width: 60%;" src="../../../../../assets/calendar.svg"/> -->
+            <div class="text">
+            <div class="overlay d-flex align-items-center justify-content-center">
+                <div class="head">
+                    <p>Education</p>
+                    <hr>
+                </div>
+            </div>
+        </div> 
+        </div>
+        <div (click)="navigateToUrl('/about/marketing')" class="col-4_5 team-card-padding d-flex align-items-center justify-content-center team-card position-relative card-margin-right" style="background: no-repeat center/50% #1b2e54 url(../../../../../assets/channel.svg); margin-top: 2rem;">
+            <!-- <img style="filter: brightness(0) invert(1); width: 60%;" src="../../../../../assets/calendar.svg"/> -->
+            <div class="text">
+            <div class="overlay d-flex align-items-center justify-content-center">
+                <div class="head">
+                    <p>Marketing</p>
+                    <hr>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div (click)="navigateToUrl('/about/research')" class="col-4_5 team-card-padding d-flex align-items-center justify-content-center team-card position-relative" style="background: no-repeat center/50% #841010 url(../../../../../assets/research.svg); margin-top: 2rem;">
+        <!-- <img style="filter: brightness(0) invert(1); width: 60%;" src="../../../../../assets/calendar.svg"/> -->
+        <div class="text">
+            <div class="overlay d-flex align-items-center justify-content-center">
+                <div class="head">
+                    <p>Research</p>
+                    <hr>
+                </div>
+            </div>
+        </div> 
+    </div>
+    </div>
+</div>
+
+<div class="background-image background-size home-background-image">
+    <app-subscribe title="Our Community"></app-subscribe>
+    <app-footer></app-footer>
+</div>

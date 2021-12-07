@@ -1,0 +1,8 @@
+<div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position">Advisors</span>
+</div>
+<div class="row justify-content-center row-padding mx-auto my-auto">
+    <div class="col-12 col-md-11 mt-5" *ngFor="let advisor of advisors">
+        <app-alumni-card [advisor]="advisor"></app-alumni-card>    
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<!-- <div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position">Alumni</span>
+</div>
+<div class="row justify-content-center row-padding mx-auto my-auto">
+    <div class="col-12 col-md-11 mt-5" *ngFor="let alum of alumni">
+        <app-alumni-card [alum]="alum"></app-alumni-card>    
+    </div>
+</div> -->
+<div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position w-100 text-center">Alumni</span>
+</div>
+<div class="row justify-content-center row-padding mx-auto my-auto">
+    <div class="col-12 col-md-11 mt-5">
+        <div class="row justify-content-center">
+            <div class="leadership-card" *ngFor="let member of alumni">
+                <app-eboard-card [teamMember]="member" [color]="'blue'"></app-eboard-card>
+            </div>
+        </div>
+    </div>
+</div>

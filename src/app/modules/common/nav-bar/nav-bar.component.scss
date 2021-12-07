@@ -1,0 +1,221 @@
+.custom-navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-content {
+    justify-content: space-evenly;
+    transition: all 0.2s ease 0s;
+}
+
+.close-button {
+    display: none;
+}
+
+.hamburger-button {
+    display: none;
+}
+
+.navbar-link-color {
+    color: #841010;
+}
+
+.apply-navbar-link > a {
+    transition: all 0.2s ease 0s
+}
+
+.apply-navbar-link > a:hover {
+    background: #841010 !important;
+    color: white;
+}
+
+.navbar-link > a, .apply-navbar-link > a {
+    position: relative;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-decoration: none;
+}
+
+.dropdown-link {
+    font-family: "Merriweather", serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    display: block;
+    padding: 15px 30px;
+}
+
+.dropdown-link-color {
+    color: rgb(27, 46, 84);
+    text-align: center;
+}
+
+.dropdown-layout {
+    position: absolute;
+    background-color: rgb(243, 243, 243);
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.apply-button-color {
+    border-color: #841010;
+}
+
+.navbar-content-width {
+    width: 66.666666666%;
+}
+
+.navbar-link-spacing {
+    letter-spacing: 0.125rem;
+}
+
+.dropdown {
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+    transform: translate(-20px, 19px);
+}
+
+.dropdown a {
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    text-decoration: underline !important;
+}
+
+.img-height {
+    height: 6rem;
+}
+
+@media (max-width: 975px) {
+    .navbar-content {
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        flex-wrap: wrap;
+        background-color: white;
+        transition: all 0.2s ease 0s;
+    }
+
+    .navbar-content-width {
+        width: 55%;
+    }
+
+    .close-button {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        top: 1.25rem;
+        right: 2.5rem;
+    }
+
+    .apply-navbar-link, .navbar-link {
+        width: 50%;
+        display: block;
+        padding: 1rem;
+        transition: all 0.2s ease 0s;
+    }
+
+    .navbar-link-color {
+        color: #841010;
+    }
+
+    .dropdown-layout {
+        position: relative;
+        background-color: white;
+        box-shadow: none;
+    }
+
+    .dropdown-link-color {
+        color: #841010;
+        text-align: left;
+    }
+
+    .navbar-link > a:hover {
+        text-decoration: underline;
+    }
+
+    .apply-button {
+        width: 50%;
+        display: block;
+        padding: 1rem;
+    }
+
+    .apply-button-color {
+        border-color: #841010;
+    }
+
+    .hamburger-button {
+        display: flex;
+        cursor: pointer;
+        margin-right: 2rem;
+
+    }
+}
+
+@media (max-width: 604px) {
+    .img-height {
+        height: 5rem;
+    }
+
+    .navbar-content-width {
+        width: 100%;
+    }
+}
+
+@media (min-width: 976px) {
+
+    .navbar-link > a:before, .navbar-link a:after
+    {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        content: "";
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    .navbar-link > a:before
+    {
+        top: 0px;
+        transform: translateY(10px);
+    }
+
+    .navbar-link > a:after
+    {
+        bottom: 0px;
+        transform: translateY(-10px);
+    }
+
+    .navbar-link > a:hover:before, .navbar-link > a:hover:after
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .navbar-content {
+        padding: 0 !important;
+    }
+
+}

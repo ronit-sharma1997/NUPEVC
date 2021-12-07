@@ -1,0 +1,84 @@
+.container-padding {
+    padding-top: 3rem; 
+    padding-bottom: 3rem;
+}
+
+.picture-container {
+    width: 75%; 
+    border-radius: 9999px; 
+    border: 10px solid; 
+    overflow: hidden;
+}
+
+.picture-wrap {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition-duration: 0.5s;
+}
+
+.picture-wrap:hover {
+    transform: scale(1.1);
+}
+
+.name {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    line-height: 1.25rem; 
+    color: rgba(107, 114, 128, 1);
+}
+
+.red-icon,.blue-icon {
+    padding-top: 0.75rem; 
+    padding-bottom: 0.75rem; 
+    flex-grow: 1;
+    
+}
+
+.red-icon:hover {
+    background-color: #841010 !important;
+    cursor: pointer;
+
+}
+
+.blue-icon:hover {
+    background-color: #1b2e54 !important;
+    cursor: pointer;
+
+}
+
+.blue-icon .ng-fa-icon {
+    color: #1b2e54;
+}
+
+.red-icon .ng-fa-icon {
+    color: #841010;
+}
+
+.blue-icon:hover .ng-fa-icon, .red-icon:hover .ng-fa-icon {
+    color: white !important;
+}
+
+.blue-icon:first-child, .red-icon:first-child {
+    border-left: 1px solid #dee2e6;
+    border-bottom-left-radius: 1rem;
+}
+
+.blue-icon:last-child, .red-icon:last-child {
+    border-left: 1px solid #dee2e6;
+    border-bottom-right-radius: 1rem;
+}
+
+@media (max-width: 700px) {
+    ::ng-deep .ng-fa-icon svg {
+        font-size: 3rem !important;
+    }
+
+    .picture-container {
+        width: 60%;
+    }
+}

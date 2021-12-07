@@ -1,0 +1,15 @@
+<div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position w-100 text-center">Leadership</span>
+</div>
+<div class="row justify-content-center row-padding mx-auto my-auto">
+    <div class="col-12 col-md-11 mt-5">
+        <div class="row justify-content-center">
+            <div class="leadership-card" *ngFor="let member of team">
+                <app-eboard-card [teamMember]="member" [color]="'red'"></app-eboard-card>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<app-footer></app-footer>

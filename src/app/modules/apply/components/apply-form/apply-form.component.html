@@ -1,0 +1,172 @@
+<div class="about-background-image about-background-size position-relative" style="background-position-y: 45vh !important;">
+    <div class="position-absolute w-100" style="top: 20%; left: 0; transform: translateY(-20%);">
+        <div class="row w-100 justify-content-center" style="margin-left: 0;">
+            <div class="title-col text-center">
+                <span class="primary-blue-color title">Team Application</span>
+                <div class="w-100" style="border-top: 1px solid; margin: auto;"></div>
+            </div>
+            <div class="col-8 text-center margin-top">
+                <p class="text">Please fill out this form to be considered for any openings</p>
+            </div>
+            <div class="form-col margin-top" style="background-color: white; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5)!important;">
+                <form #userForm="ngForm">
+                    <input #one id="one" (change)="radioButtonChanged($event)" type="radio" name="stage" checked="checked" />
+                    <input #two id="two" (change)="radioButtonChanged($event)" type="radio" name="stage" [disabled]="validateFirstStage()" />
+                    <input #three id="three" (change)="radioButtonChanged($event)" type="radio" name="stage" [disabled]="validateFirstStage() || validateSecondStage()" />
+
+                    <div class="stages d-flex justify-content-between">
+                        <label for="one">1</label>
+                        <label for="two">2</label>
+                        <label for="three">3</label>
+                    </div>
+
+                    <div class="step-progress"><span></span></div>
+
+                    <div class="panels">
+                        <div data-panel="one">
+                            <div class="form-group row justify-content-center margin-top">
+                                <div class="col-10 col-md-5">
+                                    <label for="name" style="font-weight: 700;">Name</label>
+                                    <div class="mt-2">
+                                        <input type="text" class="form-control" id="name" [(ngModel)]="applyForm.name" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-5 mt-2 mt-md-0">
+                                    <label for="email" style="font-weight: 700;">Email</label>
+                                    <div class="mt-2">
+                                        <input type="email" class="form-control" id="email" [(ngModel)]="applyForm.email" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-5 mt-4">
+                                    <label for="major" style="font-weight: 700;">Major</label>
+                                    <div class="mt-2">
+                                        <input type="text" class="form-control" id="major" [(ngModel)]="applyForm.major" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-5 mt-4">
+                                    <label for="linkedin" style="font-weight: 700;">LinkedIn</label>
+                                    <div class="mt-2">
+                                        <input type="email" class="form-control" id="linkedin" [(ngModel)]="applyForm.linkedIn" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-panel="two">
+                            <div class="form-group row justify-content-center margin-top">
+                                <div class="col-10 col-md-5" style="text-align:justify; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <label for="teams" style="font-weight: 700;">Teams Interested In</label>
+                                    <div class="mt-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="researchTeam" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="researchTeam">
+                                                Research
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="marketingTeam" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="marketingTeam">
+                                                Marketing
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="educationTeam" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="educationTeam">
+                                                Education
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="eventsTeam" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="eventsTeam">
+                                                Events
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-5 mt-2 mt-md-0" style="text-align:justify; display:flex; flex-direction:column; align-items:center;">
+                                    <label for="email" style="font-weight: 700;">Positions Interested In</label>
+                                    <div class="mt-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="director" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="director">
+                                                Director
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="seniorAnalyst" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="seniorAnalyst">
+                                                Senior Analyst
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="juniorAnalyst" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="juniorAnalyst">
+                                                Junior Analyst
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center margin-top">
+                                    <label for="reason" class="col-10 text-center" style="font-weight: 700;">Please provide why you would be a good fit for the role</label>
+                                    <div class="col-10 mt-2">
+                                        <textarea class="form-control" id="reason" rows="5" style="resize: none;" [(ngModel)]="applyForm.goodFit" [ngModelOptions]="{standalone: true}"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div data-panel="three">
+                            <div id="uploadArea" class="upload-area" [ngClass]="uploadArea" style="margin: auto;">
+                                <!-- Header -->
+                                <div class="upload-area__header">
+                                  <h1 class="upload-area__title">Upload your resume</h1>
+                                  <p class="upload-area__paragraph">
+                                    File should have an extension
+                                    <strong class="upload-area__tooltip">
+                                      like
+                                      <span class="upload-area__tooltip-data">{{fileToolTips}}</span>
+                                    </strong>
+                                  </p>
+                                </div>
+                                <!-- End Header -->
+                              
+                                <!-- Drop Zoon -->
+                                <div id="dropZoon" (dragover)="dragOverEvent($event)" (dragleave)="dragLeaveEvent($event)" (drop)="dropEvent($event)" (click)="clickEvent()" class="upload-area__drop-zoon drop-zoon" [ngClass]="dropZoneClass">
+                                  <span class="drop-zoon__icon">
+                                    <fa-icon [icon]="faFileUpload"></fa-icon>
+                                  </span>
+                                  <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+                                  <span id="loadingText" class="drop-zoon__loading-text" [ngStyle]="{'display': loadingText ? 'block' : 'none'}">Please Wait</span>
+                                  <input type="file" (change)="fileInputChanged($event)" #fileInput class="drop-zoon__file-input" accept=".pdf, .doc, .docx">
+                                </div>
+                                <!-- End Drop Zoon -->
+                              
+                                <!-- File Details -->
+                                <div id="fileDetails" class="upload-area__file-details file-details" [ngClass]="fileDetails">
+                                  <h3 class="file-details__title">Uploaded File</h3>
+                              
+                                  <div id="uploadedFile" class="uploaded-file" [ngClass]="uploadedFile">
+                                    <div class="uploaded-file__icon-container">
+                                      <fa-icon [icon]="faFile" class='bx bxs-file-blank uploaded-file__icon'></fa-icon>
+                                      <span class="uploaded-file__icon-text">{{uploadedFileType}}</span>
+                                    </div>
+                              
+                                    <div id="uploadedFileInfo" class="uploaded-file__info" [ngClass]="uploadedFileInfo">
+                                      <span class="uploaded-file__name">{{uploadedFileName}}</span>
+                                      <span class="uploaded-file__counter">{{uploadedFileCount}}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group row justify-content-center margin-top mb-4">
+                        <div class="col-10 col-md-4 text-center">
+                            <button (click)="buttonClicked($event)" class="form-button" [ngClass]="(currentStage == 'one' && validateFirstStage()) || (currentStage == 'two' && validateSecondStage()) || (currentStage == 'three' && validateThirdStage()) ? 'disabled-button' : ''" [disabled]="(currentStage == 'one' && validateFirstStage()) || (currentStage == 'two' && validateSecondStage()) || (currentStage == 'three' && validateThirdStage())">{{buttonLabel}}</button>
+                        </div>
+                    </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

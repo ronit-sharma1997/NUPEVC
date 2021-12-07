@@ -1,0 +1,45 @@
+.leadership-card {
+    flex: 0 0 auto;
+    width: 22%; 
+    border-radius: 1rem; 
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 5%;
+}
+
+@media (min-width: 1201px) {
+    .leadership-card:nth-child(n+4) {
+        margin-top: 3rem;
+    }
+    
+    .leadership-card:nth-child(3n) {
+        margin-right: 0%;
+    }
+}
+
+@media (max-width:700px) {
+    .leadership-card {
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    .leadership-card:nth-child(n+2) {
+        margin-top: 3rem;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width:1200px) {
+    .leadership-card {
+        width: 40%;
+    }
+
+    .leadership-card:nth-child(2n) {
+        margin-right: 0%;
+    }
+
+    .leadership-card:nth-child(n+3) {
+        margin-top: 3rem;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="leadership-card h-100">
+    <div class="text-center container-padding" style="height: 87%;">
+        <div class="mx-auto picture-container" [ngClass]="{'primary-blue-color': color === 'blue', 'primary-red-color': color === 'red'}">
+          <img [src]="teamMember.img" alt="profile image" class="picture-wrap">
+        </div>
+        <h5 class="name mt-4 mb-1">{{ teamMember.name }}</h5>
+        <div class="title ps-2 pe-2">{{ teamMember.title }}<span *ngIf="teamMember.company" (click)="navigateToUrl(teamMember.companyUrl!)" style="text-decoration: underline; cursor: pointer;">{{ teamMember.company }}</span></div>
+        <div class="title ps-2 pe-2 mt-3" *ngIf="teamMember.grade">{{ teamMember.grade }}</div>
+      </div>
+      <div class="d-flex border-top" style="height: 13%;">
+        <div class="text-center d-flex justify-content-center align-items-center" [ngClass]="{'blue-icon': color === 'blue', 'red-icon': color === 'red'}" (click)="navigateToUrl(teamMember.linkedIn)">
+            <fa-icon [icon]="faLinkedin" size="2x"></fa-icon>
+        </div>
+        <div *ngIf="!teamMember.company" class="text-center d-flex justify-content-center align-items-center" [ngClass]="{'blue-icon': color === 'blue', 'red-icon': color === 'red'}" (click)="navigateToUrl(teamMember.email)">
+            <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
+        </div>
+      </div>
+  </div>

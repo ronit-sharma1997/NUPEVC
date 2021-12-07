@@ -22,19 +22,19 @@ export class AboutSpecificTeamComponent implements OnInit {
 
     this.teamMap.set('education', {
       header: 'Education Team',
-      img: '../../../assets/isec.png',
+      img: '../../../assets/isec.jpg',
     });
     this.teamMap.set('research', {
       header: 'Research Team',
-      img: '../../../assets/isec.png',
+      img: '../../../assets/isec.jpg',
     });
-    this.teamMap.set('outreach', {
-      header: 'Outreach Team',
-      img: '../../../assets/isec.png',
+    this.teamMap.set('marketing', {
+      header: 'Marketing Team',
+      img: '../../../assets/isec.jpg',
     });
     this.teamMap.set('events', {
       header: 'Events Team',
-      img: '../../../assets/isec.png',
+      img: '../../../assets/isec.jpg',
     });
   }
 

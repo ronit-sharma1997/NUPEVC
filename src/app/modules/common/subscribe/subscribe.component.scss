@@ -1,31 +1,70 @@
 .subscribe {
     display: none;
-  }
+}
   
-  input {
-    outline: none !important;
-    box-shadow: none !important;
+input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-style {
+  background: #fff;
+  padding: 4px 10px;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: left; border: 1px solid black;
+}
+
+.form-input {
+  border: none; 
+  border-radius: 25px;
+}
+
+.join-slack-button:hover {
+  background-color: #841010 !important;
+  color: white !important;
+}
+
+@media (max-width: 647px) {
+  .community {
+    display: none !important;
   }
-  
-  .subscribe-title:after { /* this is the border */
-    content:"";
-    display:block;
-    width: 6em;
-    max-width:30%;
-    border-bottom: 5px solid #841010;
+
+  .form-margin {
     margin: auto;
+  } 
+
+  .subscribe {
+    display: inline-block !important;
   }
-  
-  @media (max-width: 647px) {
-    .community {
-      display: none !important;
-    }
-  
-    .form-margin {
-      margin: auto;
-    } 
-  
-    .subscribe {
-      display: inline-block;
-    }
+
+  .subscribe-button {
+    margin-right: 10px !important;
+    width: 172.97px !important; 
+    height: 51px !important;
+    border-radius: 50px !important; 
+    color: white !important; 
+    border: 2px solid black !important; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important; 
+    background-color: white !important;
   }
+}
+
+@media (min-width: 648px) {
+  .subscribe-button {
+    background-color: #841010 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 50px;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+  }
+}

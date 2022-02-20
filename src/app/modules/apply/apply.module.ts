@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ApplyStepsModule } from 'src/app/modules/common/apply-steps/apply-steps.module';
 import { FooterModule } from 'src/app/modules/common/footer/footer.module';
 import { ApplyPanelModule } from '../common/apply-panel/apply-panel.module';
+import { ModalModule } from '../common/modal/modal.module';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
 import { ApplyPageComponent } from './components/apply-page/apply-page.component';
 
@@ -30,7 +31,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ApplyStepsModule,
-    ApplyPanelModule
+    ApplyPanelModule,
+    ModalModule
   ],
   exports: [RouterModule]
 })

@@ -1,15 +1,37 @@
-<div class="about-background-image about-background-size position-relative">
-    <span class="position-absolute primary-blue-color text-white title title-position w-100 text-center">Leadership</span>
-</div>
-<div class="row justify-content-center row-padding mx-auto my-auto">
-    <div class="col-12 col-md-11 mt-5">
-        <div class="row justify-content-center">
-            <div class="leadership-card" *ngFor="let member of team">
-                <app-eboard-card [teamMember]="member" [color]="'red'"></app-eboard-card>
+
+    <div class="pe-0 position-relative title-height">
+        <img class="w-100 h-100" [src]="imgUrl"/>
+        <div class="card-width d-flex position-absolute bg-white shadow card-position" style="background-color: #F0EFEF !important">
+            <div class="row p-5">
+              <div class="col-12 subheader primary-red-color team-header">
+                <b>{{header}}</b>
+              </div>
+              <div class="col-12">
+                <div style="height: 3px; width: 30%; background-color: #600000;"></div>
+              </div>
+              <div class="col-11 mt-3 team-description">{{description}}<span *ngIf="linkDescription" class="hyperlink" [routerLink]="['/events']" style="cursor: pointer;"><b>{{linkDescription}}</b></span><span *ngIf="description3">{{description3}}</span></div>
             </div>
-            
         </div>
-        
     </div>
+<div class="row bg-white shadow display-small w-100 ms-0 me-0" style="background-color: #F0EFEF !important">
+    <div class="col-12 subheader primary-red-color team-header">
+      The {{header}}
+    </div>
+    <div class="col-12">
+      <div style="height: 3px; width: 30%; background-color: #600000;"></div>
+    </div>
+    <div class="col-11 mt-3 team-description">{{description}}<span *ngIf="linkDescription" class="hyperlink" [routerLink]="['/events']" style="cursor: pointer;"><b>{{linkDescription}}</b></span><span *ngIf="description3">{{description3}}</span></div>
 </div>
-<app-footer></app-footer>
+<div class="row justify-content-center row-padding pb-0 mx-auto my-auto">
+  <div class="col-11 text-center mb-3">
+      <span class="header-font-size line-through primary-blue-color">{{subheader}}</span>
+  </div>
+  <div class="col-11 text-center subheader-font-size">
+      {{subDescription}}
+  </div>
+</div>
+
+<!-- <app-apply-steps title="Join the Team" description="Northeastern Private Equity and Venture Capital provides students with real life insights and exposure to the PE/VC industry"></app-apply-steps>
+<app-apply-panel title="Interested in PEVC?" subHeader="Apply Now" url="/apply/form"></app-apply-panel>
+<app-subscribe title="Stay In Touch"></app-subscribe>
+<app-footer></app-footer> -->

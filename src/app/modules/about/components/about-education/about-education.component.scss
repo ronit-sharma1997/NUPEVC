@@ -1,0 +1,12 @@
+.presentation {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+@media (max-width: 750px) {
+    .presentation {
+        width: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import {
   faBars,
   faChevronDown,
@@ -13,6 +13,8 @@ import { MessageService } from '../../../services/message.service';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+  @ViewChild('dropdownToggle') dropDownToggle: ElementRef;
+  @ViewChild('dropdown') dropdown: ElementRef;
   faChevronDown = faChevronDown;
   faTimes = faTimes;
   faBars = faBars;
@@ -21,7 +23,7 @@ export class NavBarComponent implements OnInit {
   displaySideNavBar: boolean;
   currentPage: string;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private renderer: Renderer2) {
     this.displayAbout = false;
     this.displaySideNavBar = false;
     this.subscription = this.messageService.getMessage().subscribe(url => {
@@ -31,6 +33,12 @@ export class NavBarComponent implements OnInit {
         this.currentPage = '/home'
       }
     });
+
+    this.renderer.listen('window', 'click',(e:Event)=>{
+     if(e.target !== this.dropdown.nativeElement && e.target !== this.dropDownToggle.nativeElement ){
+         this.displayAbout = false;
+     }
+ });
   }
 
   ngOnInit(): void {

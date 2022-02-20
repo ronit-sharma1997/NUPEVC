@@ -1,0 +1,25 @@
+<div class='card-carousel display-icons'>
+    <fa-icon class="nav left" *ngIf="currentIndex > 0" [icon]="faChevronCircleLeft" (click)="setCurrentIndex(currentIndex-1)"></fa-icon>
+    <!-- <app-carousel-card [activeIndex]='currentIndex' [cardIndex]='i' [title]="content[i].title" [content]="content[i].content" *ngFor="let card of content; let i = index"></app-carousel-card>   -->
+    <div class='card-container card shadow' *ngFor="let card of content; let i = index" [style.transform]="'rotateY(calc(' + calculateOffset(i)  + '* 50deg)) scaleY(calc(' + calculateAbsOffset(i) + '* -0.4 + 1)) translateZ(calc(' + calculateAbsOffset(i) + ' *-30rem)) translateX(calc(' + calculateTranslateX(i) + '* -5rem))'" [ngStyle]="{'filter': 'blur(' + calculateAbsOffset(i) + 'rem)', 'opacity': calculateOpacity(i) ? '0' : '1', 'display': calculateDisplay(i) ? 'none' : 'block', 'pointer-events' : currentIndex === i ? 'auto' : 'none'}">
+        <div class='carousel-card' [ngStyle]="{'background-color': currentIndex === i ? 'white' : 'hsl(0, 78%, calc(29% - ' + calculateAbsOffset(i) + '* 20%))'}">
+            <img class="card-img-top" [ngStyle]="{'opacity': currentIndex === i ? 1 : 0}" src="{{card.img}}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title" [ngStyle]="{'opacity': currentIndex === i ? 1 : 0}">{{card.title}}</h4>
+                <div [ngStyle]="{'opacity': currentIndex === i ? 1 : 0}">{{card.content}}</div>
+            </div>
+        </div>
+    </div> 
+    <fa-icon class="nav right" *ngIf="currentIndex < content.length - 1" [icon]="faChevronCircleRight" (click)="setCurrentIndex(currentIndex+1)"></fa-icon>
+</div>
+<div class="row display-small justify-content-center">
+    <div class='col-9' *ngFor="let card of content; let i = index" [ngStyle]="{'margin-top': i === 0 ? '0' : '2rem'}">
+        <div class="carousel-card" style="background-color: white;">
+            <img class="card-img-top" src="{{card.img}}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{card.title}}</h4>
+                <div>{{card.content}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,9 @@
+.footer {
+    background-color: #F0EFEF; 
+    padding-top: 5rem; 
+    padding-bottom: 5rem;
+}
+
 .footer-link {
     margin-bottom: 2rem;
     text-decoration: none;
@@ -27,18 +33,44 @@ ul a:hover {
     width: 16.66666667%;
 }
 
+.list-style {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    padding-left: 15px;
+}
+
+.list-item {
+    padding-top: 0; 
+    padding: 5px 0;
+    display: flex; 
+    align-items: center;
+}
+
+.list-item > fa-icon {
+    font-size: 18px; 
+    line-height: 1; 
+    padding-right: 8px; 
+    margin-bottom: 2rem;
+}
+
+.list-item > a {
+    color: #777777 !important; 
+    transition: 0.3s !important; 
+    display: inline-block !important; 
+    line-height: 1 !important;
+}
+
+.list-margin-top {
+    margin-top: 2.5rem !important;
+}
+
 @media (max-width: 1031px) {
     .title-center {
         text-align: center;
         padding-left: 0;
     }
 
-}
-
-@media (max-width: 997px) {
-    .list-margin-top {
-        margin-top: 4.25rem !important;
-    }
 }
 
 @media (max-width: 950px) {
@@ -50,20 +82,11 @@ ul a:hover {
 
 @media (max-width: 647px) {
     .list-col {
-        width: 25%;
+        width: 35%;
         text-align: center;
     }
 
-}
-
-@media (max-width: 450px) {
-    .list-col {
-        width: 40%;
-        text-align: center;
+    .social-media-padding {
+        padding-left: 1.75rem !important;
     }
-
-    .list-margin-top {
-        margin-top: 2.5rem !important;
-    }
-
 }

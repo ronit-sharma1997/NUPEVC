@@ -5,7 +5,6 @@ import { ApplyModule } from './modules/apply/apply.module';
 import { ContactModule } from './modules/contact/contact.module';
 import { EventsModule } from './modules/events/events.module';
 import { HomeModule } from './modules/home/home.module';
-import { NewsletterModule } from './modules/newsletter/newsletter.module';
 
 const routes: Routes = [
   {
@@ -24,10 +23,10 @@ const routes: Routes = [
     path: 'events',
     loadChildren: () => EventsModule,
   },
-  {
-    path: 'newsletter',
-    loadChildren: () => NewsletterModule,
-  },
+  // {
+  //   path: 'newsletter',
+  //   loadChildren: () => NewsletterModule,
+  // },
   {
     path: 'apply',
     loadChildren: () => ApplyModule,

@@ -1,14 +1,14 @@
-<div class="about-background-image about-background-size position-relative" style="background-position-y: 45vh !important;">
+<div class="about-background-image about-background-size position-relative" style="background-position-y: 45vh !important; height: 110vh;">
     <div class="position-absolute w-100" style="top: 20%; left: 0; transform: translateY(-20%);">
         <div class="row w-100 justify-content-center" style="margin-left: 0;">
             <div class="title-col text-center">
-                <span class="primary-blue-color title">Team Application</span>
-                <div class="w-100" style="border-top: 1px solid; margin: auto;"></div>
+                <span class="title line-through primary-blue-color">Team Application</span>
+                <!-- <div class="w-100" style="border-top: 1px solid; margin: auto;"></div> -->
             </div>
             <div class="col-8 text-center margin-top">
                 <p class="text">Please fill out this form to be considered for any openings</p>
             </div>
-            <div class="form-col margin-top" style="background-color: white; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5)!important;">
+            <div class="form-col shadow" style="background-color: white; border: solid 1px #c0c0c0">
                 <form #userForm="ngForm">
                     <input #one id="one" (change)="radioButtonChanged($event)" type="radio" name="stage" checked="checked" />
                     <input #two id="two" (change)="radioButtonChanged($event)" type="radio" name="stage" [disabled]="validateFirstStage()" />
@@ -57,26 +57,26 @@
                                     <label for="teams" style="font-weight: 700;">Teams Interested In</label>
                                     <div class="mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="researchTeam" (change)="teamsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="researchTeam">
+                                            <input class="form-check-input" type="checkbox" id="Research" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Research">
                                                 Research
                                             </label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" id="marketingTeam" (change)="teamsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="marketingTeam">
+                                            <input class="form-check-input" type="checkbox" id="Marketing" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Marketing">
                                                 Marketing
                                             </label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" id="educationTeam" (change)="teamsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="educationTeam">
+                                            <input class="form-check-input" type="checkbox" id="Education" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Education">
                                                 Education
                                             </label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" id="eventsTeam" (change)="teamsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="eventsTeam">
+                                            <input class="form-check-input" type="checkbox" id="Events" (change)="teamsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Events">
                                                 Events
                                             </label>
                                         </div>
@@ -86,20 +86,20 @@
                                     <label for="email" style="font-weight: 700;">Positions Interested In</label>
                                     <div class="mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="director" (change)="positionsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="director">
+                                            <input class="form-check-input" type="checkbox" id="Director" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Director">
                                                 Director
                                             </label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" id="seniorAnalyst" (change)="positionsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="seniorAnalyst">
+                                            <input class="form-check-input" type="checkbox" id="Senior Analyst" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Senior Analyst">
                                                 Senior Analyst
                                             </label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" id="juniorAnalyst" (change)="positionsCheckboxChanged($event)">
-                                            <label class="form-check-label ms-3" for="juniorAnalyst">
+                                            <input class="form-check-input" type="checkbox" id="Junior Analyst" (change)="positionsCheckboxChanged($event)">
+                                            <label class="form-check-label ms-3" for="Junior Analyst">
                                                 Junior Analyst
                                             </label>
                                         </div>
@@ -115,21 +115,14 @@
                             </div>
                         </div>
                         <div data-panel="three">
-                            <div id="uploadArea" class="upload-area" [ngClass]="uploadArea" style="margin: auto;">
+                            <div id="uploadArea" class="upload-area shadow" [ngClass]="uploadArea" style="margin: auto;">
                                 <!-- Header -->
                                 <div class="upload-area__header">
                                   <h1 class="upload-area__title">Upload your resume</h1>
-                                  <p class="upload-area__paragraph">
-                                    File should have an extension
-                                    <strong class="upload-area__tooltip">
-                                      like
-                                      <span class="upload-area__tooltip-data">{{fileToolTips}}</span>
-                                    </strong>
-                                  </p>
                                 </div>
                                 <!-- End Header -->
                               
-                                <!-- Drop Zoon -->
+                                <!-- Drop Zone -->
                                 <div id="dropZoon" (dragover)="dragOverEvent($event)" (dragleave)="dragLeaveEvent($event)" (drop)="dropEvent($event)" (click)="clickEvent()" class="upload-area__drop-zoon drop-zoon" [ngClass]="dropZoneClass">
                                   <span class="drop-zoon__icon">
                                     <fa-icon [icon]="faFileUpload"></fa-icon>
@@ -170,3 +163,4 @@
     </div>
 </div>
 <app-footer></app-footer>
+<app-modal [description]='"Submitting your application..."' [success]="successfulSubmit" [submitMessage]="submitMessage"></app-modal>

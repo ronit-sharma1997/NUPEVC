@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faBookOpen,
   faCalendar,
@@ -22,9 +23,13 @@ export class AboutPageComponent implements OnInit {
   faChartLine = faChartLine;
   faMailBulk = faMailBulk;
 
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService, private router: Router) {}
 
   ngOnInit() {
     this.messageService.sendMessage('/about')
+  }
+
+  navigateToUrl(url: string): void {
+    this.router.navigate(['about', url])
   }
 }

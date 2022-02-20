@@ -1,0 +1,7 @@
+<div class='card-container' [style.transform]="'rotateY(calc(' + offset  + '* 50deg)) scaleY(calc(' + absOffset + '* -0.4 + 1)) translateZ(calc(' + absOffset + ' *-30rem)) translateX(calc(' + translateX + '* -5rem))'" [ngStyle]="{'filter': 'blur(' + absOffset + 'rem)', 'opacity': opacity? '0' : '1', 'display': display ? 'none' : 'block', 'pointer-events' : activeIndex === cardIndex ? 'auto' : 'none'}">
+    <div class='carousel-card' [ngStyle]="{'background-color': 'hsl(280deg, 40%, calc(100% - ' + absOffset + '* 50%))'}">
+        <h2 [ngStyle]="{'opacity': activeIndex === cardIndex ? 1 : 0}">{{title}}</h2>
+        <p [ngStyle]="{'opacity': activeIndex === cardIndex ? 1 : 0}">{{content}}</p>
+    </div>
+</div>
+

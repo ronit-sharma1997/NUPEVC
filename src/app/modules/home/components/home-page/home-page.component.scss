@@ -26,8 +26,8 @@
 }
 
 .paragraph-font-size {
-    font-size: 1.75vw;
-    line-height: 1;
+    font-size: 1.3vw;
+    line-height: 1.25;
 }
 
 .header-position {
@@ -175,7 +175,7 @@
 
     .paragraph-font-size {
         font-size: 20px;
-        line-height: 1;
+        line-height: 1.25;
     }
 
     .community {
@@ -186,13 +186,3 @@
         display: inline-block;
     }
 }
-
-// .height {
-//     min-height: 100vh;
-// }
-
-// @media (min-width: 650px) and (max-width:950px) {
-//     .height {
-//         height: 425px;
-//     }
-// }

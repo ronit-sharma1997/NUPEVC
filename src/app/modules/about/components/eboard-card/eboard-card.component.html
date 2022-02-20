@@ -11,7 +11,7 @@
         <div class="text-center d-flex justify-content-center align-items-center" [ngClass]="{'blue-icon': color === 'blue', 'red-icon': color === 'red'}" (click)="navigateToUrl(teamMember.linkedIn)">
             <fa-icon [icon]="faLinkedin" size="2x"></fa-icon>
         </div>
-        <div *ngIf="!teamMember.company" class="text-center d-flex justify-content-center align-items-center" [ngClass]="{'blue-icon': color === 'blue', 'red-icon': color === 'red'}" (click)="navigateToUrl(teamMember.email)">
+        <div *ngIf="!teamMember.company" class="text-center d-flex justify-content-center align-items-center" [ngClass]="{'blue-icon': color === 'blue', 'red-icon': color === 'red'}" (click)="emailEboard()">
             <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
         </div>
       </div>

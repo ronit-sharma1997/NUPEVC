@@ -1,0 +1,25 @@
+<!-- <div class="about-background-image about-background-size position-relative">
+    <span class="position-absolute primary-blue-color text-white title title-position w-100 text-center">Newsletters</span>
+</div> -->
+
+<div class="row justify-content-end mt-5" style="width: 60%; margin: auto;">
+  <div class="dropdown-col pe-0">
+  <select class="form-select" [ngModel]="semester" [formControl]="filter">
+      <option value="all">All</option>
+      <option value="Spring 2021">Spring 2021</option>
+      <option value="Fall 2020">Fall 2020</option>
+  </select>
+</div>
+</div>
+
+<div class="newsletter-container justify-content-center" [ngStyle]="{'display' : isLoading || errorMessage !== '' ? 'flex' : 'block'}">
+  <fa-icon *ngIf="isLoading" [icon]="faCircleNotch" [spin]="true" size="3x"></fa-icon>
+  <div *ngIf="errorMessage !== ''" style="font-size: 20px;">{{errorMessage}}</div>
+  <div class="newsletter-card" data-aos="fade-up" data-aos-offset="200"
+  data-aos-delay="50"
+  data-aos-duration="1000"
+  data-aos-easing="ease-in-out" data-aos-once="true" *ngFor="let newsLetter of filteredNewsLetters" (click)="navigateToUrl(newsLetter.src)">
+    <h3 class="card-title">Volume {{newsLetter.volume}}</h3>
+    <h3 class="card-date">{{newsLetter.date}}</h3>
+  </div>
+</div>

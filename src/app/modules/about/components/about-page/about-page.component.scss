@@ -4,6 +4,10 @@
     clear: right;
 }
 
+.description-padding {
+  padding: 2rem 3rem
+}
+
 .text::after {
     content: "";
     position: absolute;
@@ -23,7 +27,7 @@
 
 .description-text {
   font-size: 25px; 
-  line-height: 1.1;
+  line-height: 1.25;
 }
 
 .our-team-height {
@@ -32,8 +36,30 @@
 }
 
 .card-box {
-      background-color: white; 
-      box-shadow: 0 2.5rem 3rem rgb(0 0 0 / 20%);
+  top: 0px;
+  position: relative;
+  background-color: white;
+  border: 1px solid #f2f8f9;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0 2.5rem 3rem rgb(0 0 0 / 20%);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  &:before {
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(2.15);
+  }
 }
 
 .card-margin {
@@ -58,6 +84,7 @@
 
 .card-text {
   font-size: 20px;
+  line-height: 1.25;
 }
 
 .row-padding {
@@ -180,9 +207,12 @@
     flex: 0 0 auto;
     max-width: 83.33333333%;
   }
+
+  .description-padding {
+    padding: 2rem 3rem
+  }
+
 }
-
-
 
 @media (min-width: 980px) {
     .card-col {

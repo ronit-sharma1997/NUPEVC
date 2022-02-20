@@ -19,4 +19,8 @@ export class EboardCardComponent implements OnInit {
   navigateToUrl(url: string): void {
     window.open(url, '_blank');
   }
+
+  emailEboard(): void {
+    window.location.href = `mailto:${this.teamMember.email}+?subject=Hello`
+  }
 }

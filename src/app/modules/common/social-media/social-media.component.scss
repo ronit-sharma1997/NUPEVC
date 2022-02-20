@@ -3,3 +3,25 @@
         text-align: center;
     }
 }
+
+.circle-container:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    .circle-container {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        transition: 200ms ease all;
+    }
+
+    .circle-container:hover{
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        transform: scale(1.15);
+        transition: 200ms ease all;
+    }
+}

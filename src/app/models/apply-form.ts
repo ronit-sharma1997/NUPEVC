@@ -6,7 +6,7 @@ export class ApplyForm {
     goodFit: string;
     teams: string[];
     positions: string[];
-    resume: string;
+    resumeData: string;
 
     constructor() {
         this.name = '';
@@ -14,7 +14,7 @@ export class ApplyForm {
         this.major = '';
         this.linkedIn = '';
         this.goodFit = '';
-        this.resume = '';
+        this.resumeData = '';
         this.teams = [];
         this.positions = [];
     }

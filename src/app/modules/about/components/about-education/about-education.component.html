@@ -1,0 +1,8 @@
+<app-about-team></app-about-team>
+<div class="row justify-content-center mt-3 mb-5 w-100 ms-0 me-0">
+    <div class="presentation position-relative mt-4 mb-4" *ngFor="let url of urls; let i = index;" style="height: 400px;">
+        <fa-icon *ngIf="isLoading[i]" class="position-absolute" [icon]="faSpinner" [spin]="true" size="4x" style="top:50%; left:50%; transform:translate(-50% ,-50%)"></fa-icon>
+        <iframe style="border: 1px solid black;" (load)="loading(i)" [src]="url | safe" frameborder="1" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+</div>
+<app-footer></app-footer>

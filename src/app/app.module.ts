@@ -7,7 +7,9 @@ import { NavBarComponent } from './modules/common/nav-bar/nav-bar.component';
 import { ContactModule } from './modules/contact/contact.module';
 import { EventsModule } from './modules/events/events.module';
 import { HomeModule } from './modules/home/home.module';
-import { NewsletterModule } from './modules/newsletter/newsletter.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent],
@@ -18,9 +20,10 @@ import { NewsletterModule } from './modules/newsletter/newsletter.module';
     ContactModule,
     EventsModule,
     FontAwesomeModule,
-    NewsletterModule,
+    HttpClientModule,
+    NgbModule,
   ],
-  providers: [],
+  providers: [NgbActiveModal],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

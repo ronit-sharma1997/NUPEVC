@@ -3,4 +3,4 @@ export interface NewsLetter {
     date: string;
     src: string;
     semester: string;
-  }
+}

@@ -20,4 +20,8 @@ export class SocialMediaComponent implements OnInit {
   faCircle = faCircle;
 
   ngOnInit(): void {}
+
+  navigateToUrl(url: string): void {
+    window.open(url, '_blank')
+  }
 }

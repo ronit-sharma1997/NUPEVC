@@ -44,6 +44,19 @@
     font-weight: 700;
 }
 
+.submit-button {
+    background-color: #841010; 
+    color: white; 
+    padding: 5px 20px; 
+    border-radius: 50px; 
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%); 
+    border: 2px solid #841010
+}
+
+.disabled-button {
+    opacity: 0.8;
+}
+
 // .title {
 //     font-size: 5vw;
 // }

@@ -1,0 +1,55 @@
+<app-about-team></app-about-team>
+<div *ngIf="isLoading" class="justify-content-center d-flex">
+  <fa-icon [icon]="faCircleNotch" [spin]="true" size="3x"></fa-icon>
+</div>
+<div *ngIf="profile" class="row justify-content-center pt-4 pb-4 w-100 ms-0 me-0">
+    <div class="col-10 pt-4 pb-4" style="border-bottom: 1px solid #dbdbdb">
+      <div class="row">
+        <div class="profile-pic-col d-flex align-items-center" style="margin-right: 6rem;">
+          <img class="profile-pic shadow" src="../../../../../assets/instagram_pevc.jpg" style="height: 10rem; border: 1px solid rgba(0,0,0,.0975); border-radius: 50%;">
+        </div>
+        <div class="profile-col">
+          <div class="row">
+            <div class="col-12 d-flex align-items-center">
+              <span class="team-description my-auto">{{profile.username}}</span><button class="btn btn-primary ms-4" (click)="navigateToUrl('https://instagram.com/nu_pevc/')">Follow</button>
+            </div>
+            <div class="col-12 mt-4">
+              <ul class="profile-stats-list">
+                <li><b>{{profile.postCount}}</b> posts</li>
+                <li><b>{{profile.followersCount}}</b> followers</li>
+                <li><b>{{profile.followingCount}}</b> following</li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <b>{{profile.title}}</b>
+            </div>
+            <div class="col-12">
+              {{profile.biography}}
+            </div>
+            <div class="col-12 mt-2">
+              <a class="url-link" (click)="navigateToUrl(profile.url)"><b>{{profile.url}}</b></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 ps-0 pe-0">
+      <div class="row justify-content-center">
+        <div class="col-8 col-md-6 col-lg-4 mt-5" (click)="navigateToUrl('https://www.instagram.com/p/'+post.shortcode)" *ngFor="let post of profile.posts;">
+          <div class="w-100 d-flex align-items-center justify-content-center position-relative team-card" style="padding-top: 100%;" style="background: no-repeat center/100% url(https://imgproxy-pevc.herokuapp.com/insecure/rs:fit:::1/g:no/plain/{{post.imgUrl}});">
+            <fa-icon class="position-absolute" style="top: 2%; right: 5%; color: #fff;" *ngIf="post.is_video" [icon]="faPlay" size="2x"></fa-icon>
+            <div class="text">
+              <div class="overlay d-flex align-items-center justify-content-center">
+                  <div class="head">
+                    <span class="me-5"><fa-icon *ngIf="!post.is_video" class="me-2" [icon]="faHeart"></fa-icon><fa-icon *ngIf="post.is_video" class="me-2" [icon]="faPlay"></fa-icon>{{post.likes}}</span>
+                    <span><fa-icon class="me-2" [icon]="faComment"></fa-icon>{{post.comments}}</span>
+                  </div>
+              </div> 
+          </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+<app-subscribe *ngIf="profile" title="Stay In Touch"></app-subscribe>
+<app-footer></app-footer>

@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faFile, faFileUpload } from '@fortawesome/free-solid-svg-icons';
 import { ApplyForm } from 'src/app/models/apply-form';
+import { AWSService } from 'src/app/services/aws.service';
+import { ModalComponent } from 'src/app/modules/common/modal/modal.component';
 
 
 @Component({
@@ -30,8 +32,11 @@ export class ApplyFormComponent implements OnInit {
   uploadedFileName: string = ''
   loadingText: boolean = false
   previewImage: boolean = false
+  successfulSubmit: boolean 
+  submitMessage: string
+  @ViewChild(ModalComponent) modal: ModalComponent;
 
-  constructor() { 
+  constructor(private awsService: AWSService) { 
     this.fileTypes.set('application/pdf', '.pdf')
     this.fileTypes.set('application/vnd.openxmlformats-officedocument.wordprocessingml.document', '.docx')
     this.fileTypes.set('application/msword', '.doc')
@@ -105,8 +110,15 @@ export class ApplyFormComponent implements OnInit {
       this.thirdStage.nativeElement.click()
     } else {
       console.log(this.applyForm)
-      this.applyForm = new ApplyForm()
-      // TODO Submit Form
+      this.awsService.apply(this.applyForm).subscribe({next: (response: any) => {
+        this.successfulSubmit = true;
+        this.submitMessage = 'Successfully Sent Your Application!'
+        this.applyForm = new ApplyForm()
+        this.modal.openResult()
+        this.firstStage.nativeElement.click()
+    }, error: (error: Error) => {this.modal.close(); this.successfulSubmit = false; this.submitMessage = error.message; this.modal.openResult()}})
+      
+      
     }
   }
 
@@ -119,7 +131,7 @@ export class ApplyFormComponent implements OnInit {
   }
 
   validateThirdStage(): boolean {
-    return this.applyForm.resume == ''
+    return this.applyForm.resumeData == ''
   }
 
   fileInputChanged(event: any) {
@@ -182,7 +194,7 @@ export class ApplyFormComponent implements OnInit {
         // Call Function progressMove();
         this.progressMove();
 
-        this.applyForm.resume = fileReader.result as string || ''
+        this.applyForm.resumeData = fileReader.result as string || ''
       });
   
       // Read (file) As Data Url 

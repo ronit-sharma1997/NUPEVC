@@ -1,0 +1,185 @@
+.team-header {
+    font-size: 55px;
+}
+
+.url-link {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.url-link:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.team-description {
+    font-size: 25px;
+}
+
+.team-card {
+    width: 73%;
+}
+
+.container-width {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+}
+
+.card-position {
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    height: 400px;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgba(77, 77, 77, .9);
+    color: white;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.team-card {
+    cursor: pointer;
+    box-shadow: 0 2.5rem 3rem rgba(0,0,0,.5);
+}
+
+.head {
+    font-size: 2vw;
+    
+    transform: translateY(40px);
+    transition: all 0.7s;
+    hr {
+        display: block;
+        width: 0;
+        
+        border: none;
+        border-bottom: solid 0.5vh white;
+        
+        position: absolute;
+        top:50%; left:50%;
+        transform: translateX(-50%);
+        transition: all .5s;
+    }
+  }
+
+.team-card:hover .overlay {
+    opacity: 1;
+    & .head {
+        transform: translateY(0px);
+    }
+      
+    & hr {
+        width: 75%;
+        transition-delay: 0.4s;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    .team-header {
+        font-size: 50px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .team-description {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 787px) {
+    .team-header {
+        font-size: 40px;
+    }
+
+    .team-description {
+        font-size: 18px;
+    }
+
+    .container-width {
+        width: 100%;
+    }
+
+    .card-position {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.profile-pic-col {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    justify-content: flex-end;
+}
+
+.profile-col {
+    flex: 0 0 auto;
+    width: 50%;
+    text-align: left;
+}
+
+.profile-stats-list {
+    list-style: none; 
+    display: -webkit-box; 
+    padding-left: 0;
+
+    li {
+        font-size: 16px; 
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 722px) {
+    .profile-stats-list {
+        display: inline-block;
+
+        li {
+            display: inline-block;
+        }
+
+        li:last-child {
+            margin-right: 0
+        }
+    }
+
+    .profile-pic-col {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-col {
+        width: 100%;
+
+        .col-12 {
+            display: block !important;
+            text-align: center;
+        }
+
+        .col-12:first-child {
+            margin-top: 1.5rem !important;
+        }
+    }
+
+    .head {
+        font-size: 4vw;
+    }
+
+    .team-card {
+        max-height: 200px;
+    }
+}

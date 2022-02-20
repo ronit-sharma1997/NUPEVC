@@ -117,7 +117,7 @@
     }
 
     .navbar-content-width {
-        width: 55%;
+        width: 60%;
     }
 
     .close-button {
@@ -133,6 +133,10 @@
         display: block;
         padding: 1rem;
         transition: all 0.2s ease 0s;
+    }
+
+    .apply-navbar-link {
+        width: 100%;
     }
 
     .navbar-link-color {

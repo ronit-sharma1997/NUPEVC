@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamMember } from 'src/app/models/team-member';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-alumni-team',
@@ -9,8 +10,20 @@ import { TeamMember } from 'src/app/models/team-member';
 export class AlumniTeamComponent implements OnInit {
   alumni: TeamMember[] = [];
 
+  constructor(private messageService: MessageService) {}
+
   ngOnInit(): void {
     this.alumni = [
+      {
+        name: 'Ken Graham',
+        title: 'Investment Associate at ',
+        img: '../../../../../assets/ken_graham.png',
+        linkedIn: 'https://www.linkedin.com/in/grahamk3/',
+        email: '',
+        company: 'a.k.a Brands',
+        companyUrl: 'https://www.aka-brands.com/',
+        grade: 'Class of 2019'
+      },
       {
         name: 'Mark Nevins',
         title: 'Analyst at ',
@@ -60,7 +73,19 @@ export class AlumniTeamComponent implements OnInit {
         company: 'Raymond James',
         companyUrl: 'https://www.raymondjames.com/',
         grade: 'Class of 2022'
-      }
+      },
+      {
+        name: 'Joey Waters',
+        title: 'Investment Analyst at ',
+        img: '../../../../../assets/vice-president.jpg',
+        linkedIn: 'https://www.linkedin.com/in/joey-waters/',
+        email: '',
+        company: 'Hercules Capital',
+        companyUrl: 'https://www.htgc.com/',
+        grade: 'Class of 2022'
+      },
     ];
+    this.alumni.reverse()
+    this.messageService.sendMessage('/about')
   }
 }

@@ -1,6 +1,6 @@
 <nav class="custom-navbar" style="z-index: 2"
   [ngStyle]="{'box-shadow': this.currentPage == '/about/events' || this.currentPage == '/about/education' || this.currentPage == '/about/marketing' || this.currentPage == '/about/research' ? 'rgb(0 0 0 / 20%) 0px 2px 10px' : 'none'}">
-  <a><img class="img-height" src="../../assets/WHITE MASK NEW PEVC Logo.png"
+  <a [routerLink]="['/home']"><img class="img-height" src="../../assets/WHITE MASK NEW PEVC Logo.png"
       [ngStyle]="{'filter': this.currentPage == '/home' || this.currentPage == '' ? 'brightness(100%)' : 'brightness(0%)'}" /></a>
   <div class="d-flex navbar-content-width navbar-content"
     [ngStyle]="{'max-height': displaySideNavBar ? '600px' : '0px', 'padding': displaySideNavBar ? '100px 40px' : '0px'}"

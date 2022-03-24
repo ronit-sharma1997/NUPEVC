@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdvisorMember } from '../../../../models/advisor';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-advisor-page',
@@ -9,7 +10,7 @@ import { AdvisorMember } from '../../../../models/advisor';
 export class AdvisorPageComponent implements OnInit {
   advisors: AdvisorMember[] = [];
 
-  constructor() { }
+  constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.advisors = [
@@ -33,15 +34,10 @@ export class AdvisorPageComponent implements OnInit {
         description: 'Helene is a Founding Partner at JourneyOne Ventures. She is passionate about investing in  underestimated markets such as the plant-based movement, have hunger for challenge, think with a childlike curiosity, and loves to build partnerships and outcomes that are meaningful and drive returns. Helene has previous experience in content management across a variety of fitness apparel corporations and later served as the Chief Strategy Officer of GRTR, a consumer brand accelerator.',
         linkedIn: 'https://www.linkedin.com/in/hservillon/',
         img: '../../../../../assets/helene_servillon.png'
-      },
-      {
-        name: 'Ken Graham',
-        title: 'Investment Associate at a.k.a Brands',
-        description: 'Ken is a current Investment Associate at a.k.a. Brands, a global, direct-to-consumer platform focused on fashion brands offering a curated assortment of on-trend, affordably-priced fashion apparel and accessories. Prior to joining a.k.a. Brands, Ken was an Investor at Summit Partners, a leading growth equity firm.',
-        linkedIn: 'https://www.linkedin.com/in/grahamk3/',
-        img: '../../../../../assets/ken_graham.png'
       }
     ]
+
+    this.messageService.sendMessage('/about')
   }
 
 }

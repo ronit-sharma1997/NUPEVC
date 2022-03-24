@@ -22,13 +22,6 @@ export class AboutEboardComponent implements OnInit {
         img: '../../assets/president.jpg',
       },
       {
-        name: 'Joey Waters',
-        title: 'Vice President',
-        linkedIn: 'https://www.linkedin.com/in/joey-waters/',
-        email: 'waters.j@northeastern.edu',
-        img: '../../assets/vice-president.jpg',
-      },
-      {
         name: 'PJ Marsh',
         title: 'Co-Director of Research',
         linkedIn: 'https://www.linkedin.com/in/pmarshjr/',
